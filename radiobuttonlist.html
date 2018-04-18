@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Radio button: full validation example with javascript</title>
+        <script>
+            function send() {
+                var genders = document.getElementsByName("group1");
+                if (genders[0].checked == true) {
+                    alert("Your gender is male");
+                } else if (genders[1].checked == true) {
+                    alert("Your gender is female");
+                } else {
+                    // no checked
+                    var msg = '<span style="color:red;">You must select your gender!</span><br /><br />';
+                    document.getElementById('msg').innerHTML = msg;
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+            <label>Gender:</label>
+            <br />
+            <input type="radio" name="group1" value="m" />Male
+            <br />
+            <input type="radio" name="group1" value="f" />Female
+            <br />
+            <input type="radio" name="group1" value="t" />type3
+            <div id="msg"></div>
+            <input type="submit" value="send>>" onclick="return send();" />
+            </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>untitled</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+   var edit=document.getElementById("myedit");
+   $(edit).blur(function(){
+      localStorage.setItem('MyData',this.innerHTML);
+   });
+
+   if(localStorage.getItem('MyData')){
+      edit.innerHTML=localStorage.getItem('MyData');
+   }
+});
+</script>
+
+
+</head>
+<body>
+    <h2> To-Do List </h2>
+     <ul id="myedit" contenteditable="true">
+        <li>item-1</li>
+     </ul>
+</body>
+</html>
